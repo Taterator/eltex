@@ -1,0 +1,252 @@
+THIS KEY DIFFERS FROM THE ONE I USED
+That's because I forgot to copy first keygen output
+
+eltex-pg1-v9@eltex-2025-summer-10:23>:~$ ssh-keygen Generating public/private rsa key pair. 
+Enter file in which to save the key (/home/eltex-pg1-v9/.ssh/id_rsa): key2 
+Enter passphrase 
+(empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in 
+key2 
+Your public key has been saved in key2.pub 
+The key fingerprint is: 
+SHA256:t08PsUkirTsqvKqy9/n8oeeiLqGtBpfYjWxWCpMbnvo eltex-pg1-v9@eltex-2025-summer 
+The key's 
+randomart image is: 
++---[RSA 3072]----+
+|                 |
+|                 |
+| .  | = .  .  | .O.* S + o | +o@ .  + + + | o* o o . = | +.+ oo..oo o o | **E=*==*+.  . .  |
++----[SHA256]-----+
+
+
+eltex-pg1-v9@eltex-2025-summer-10:15>:~$ ssh-copy-id -i ./.ssh/id_rsa.pub root@172.16.9.183 
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "./.ssh/id_rsa.pub" The 
+authenticity of host '172.16.9.183 (172.16.9.183)' can't be established. ED25519 key fingerprint 
+is SHA256:YNVzj+RtetZfXv5XUn/CUjeEcaMD4eg3jy8EuGGIS+o. This key is not known by any other names. 
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes /usr/bin/ssh-copy-id: 
+INFO: attempting to log in with the new key(s), to filter out any that are already installed 
+/usr/bin/ssh-copy-id: 
+INFO: 1 key(s) remain to be installed -- if you are prompted now it is to 
+install the new keys 
+root@172.16.9.183's password: 
+Number of key(s) added: 1 Now try logging 
+into the machine, with: "ssh 'root@172.16.9.183'" and check to make sure that only the key(s) 
+you wanted were added.
+
+eltex-pg1-v9@eltex-2025-summer-10:21>:~$ ssh root@172.16.9.183 Welcome to Ubuntu 24.04.2 LTS 
+(GNU/Linux 6.8.0-63-generic x86_64)
+ * Documentation: https://help.ubuntu.com * Management: https://landscape.canonical.com * 
+ Support: https://ubuntu.com/pro System information as of Fri Jul 11 03:22:36 AM UTC 2025
+  System load: 0.05 Processes: 111 Usage of /: 40.2% of 14.66GB Users logged in: 0 Memory usage: 
+  5% IPv4 address for ens18: 172.16.9.183 Swap usage: 0%
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s just raised the 
+   bar for easy, resilient and secure K8s cluster deployment. 
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+Expanded Security Maintenance for Applications is not enabled. 57 updates can be applied 
+immediately. To see these additional updates run: apt list --upgradable Enable ESM Apps to 
+receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+eltex-pg1-v9@eltex-2025-summer-10:28>:~$ cat .ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCmF+Adt9hH3p/LoNCgqnxoRTDhkOohMzk+ROoQEO0mVsfm10qdKTxylOx2nzy0m37MScKsoYG6f3Kus4F7NBVg7S6hj//fHtsejN0Lr6K0xjIYrIDG0/2UrxlxWqO8/bxW0JmPKN5JiQsekpTcgcKvJqywMoGixvoPD9jnIIc8X1XuS4opGnWSUxr/u4+q5IKTB97ww8uZeCUNn1U+B5PKBOpa7IWfn+RCpFJO2LpMV/89D5+M/na1gxTePtEf2SeOH5anNGoB8OpAYd4N7VbPt434XS1Ax4vcCYl9c/VXNaDyyblBRTTse0kZ5FxZjgDB9jT6U6lJfPBc+bkrwP1m+4QL/P+uhvhWEtCTfsngFJ/eyJNPLawqKOmLQ0zhjo5zN/PI48D+GUeeaWiDBaAS2Ff/e/6ZrP31ETtLcYjlOSfeqfo37hgeH9ogGb51rniEao/kTI6IIgzW5u9O1gapZAY4eztKsWsA5iNL4p4uoVvK4aWXsIEkp9Il71ZFwDs= eltex-pg1-v9@eltex-2025-summer
+
+root@eltex-practice2-pg1-v9:~/.ssh# cat authorized_keys
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCmF+Adt9hH3p/LoNCgqnxoRTDhkOohMzk+ROoQEO0mVsfm10qdKTxylOx2nzy0m37MScKsoYG6f3Kus4F7NBVg7S6hj//fHtsejN0Lr6K0xjIYrIDG0/2UrxlxWqO8/bxW0JmPKN5JiQsekpTcgcKvJqywMoGixvoPD9jnIIc8X1XuS4opGnWSUxr/u4+q5IKTB97ww8uZeCUNn1U+B5PKBOpa7IWfn+RCpFJO2LpMV/89D5+M/na1gxTePtEf2SeOH5anNGoB8OpAYd4N7VbPt434XS1Ax4vcCYl9c/VXNaDyyblBRTTse0kZ5FxZjgDB9jT6U6lJfPBc+bkrwP1m+4QL/P+uhvhWEtCTfsngFJ/eyJNPLawqKOmLQ0zhjo5zN/PI48D+GUeeaWiDBaAS2Ff/e/6ZrP31ETtLcYjlOSfeqfo37hgeH9ogGb51rniEao/kTI6IIgzW5u9O1gapZAY4eztKsWsA5iNL4p4uoVvK4aWXsIEkp9Il71ZFwDs= eltex-pg1-v9@eltex-2025-summer
+
+eltex-pg1-v9@eltex-2025-summer-10:31>:~/.ssh$ ls -l
+-rw-r--r-- 1 eltex-pg1-v9 eltex-pg1-v9  584 Jul 11 10:13 id_rsa.pub
+
+root@eltex-practice2-pg1-v9:~/.ssh# ls -l 
+-rw------- 1 root root 584 Jul 11 03:21 authorized_keys
+
+root@eltex-practice2-pg1-v9:~# useradd -m -s /bin/bash -p 123456 user1
+Later the password was changed 
+root@eltex-practice2-pg1-v9:~# useradd user2
+root@eltex-practice2-pg1-v9:~# useradd user3
+
+root@eltex-practice2-pg1-v9:~# usermod -s /usr/sbin/nologin user3
+
+root@eltex-practice2-pg1-v9:~# su - user3 su: warning: cannot change directory to /home/user3: 
+No such file or directory
+This account is currently not available.
+
+root@eltex-practice2-pg1-v9:~# su -s /bin/bash - user3 su: warning: cannot change directory to 
+/home/user3: No such file or directory 
+user3@eltex-practice2-pg1-v9:/root$ 
+user3@eltex-practice2-pg1-v9:/root$ logout
+root@eltex-practice2-pg1-v9:~# 
+ 
+root@eltex-practice2-pg1-v9:~# usermod -aG new_group user1 
+root@eltex-practice2-pg1-v9:~# usermod -aG new_group user2
+root@eltex-practice2-pg1-v9:~# usermod -aG new_group user3
+
+root@eltex-practice2-pg1-v9:~# groups user1 user1 : user1 new_group 
+root@eltex-practice2-pg1-v9:~# groups user2 user2 : user2 new_group 
+root@eltex-practice2-pg1-v9:~# groups user3 user3 : user3 new_group
+
+root@eltex-practice2-pg1-v9:~# mkdir /opt/share 
+root@eltex-practice2-pg1-v9:~# chgrp new_group /opt/share 
+root@eltex-practice2-pg1-v9:~# chmod g+s /opt/share 
+root@eltex-practice2-pg1-v9:~# ls -ld /opt/share/ 
+drwxr-sr-x 2 root new_group 4096 Jul 11 04:28 /opt/share/ 
+root@eltex-practice2-pg1-v9:~# chmod g+rwx /opt/share 
+root@eltex-practice2-pg1-v9:~# ls -ld /opt/share/
+drwxrwsr-x 2 root new_group 4096 Jul 11 04:28 /opt/share/
+
+root@eltex-practice2-pg1-v9:/home/user1# nano .profile
+umask 026
+
+user1@eltex-practice2-pg1-v9:/opt/share$ touch user1_file.txt
+$ touch user2_file.txt
+user3@eltex-practice2-pg1-v9:/opt/share$ touch user3_file.txt
+
+user3@eltex-practice2-pg1-v9:/opt/share$ ls -la 
+total 8 
+drwxrwsr-x 2 root new_group 4096 Jul 11 04:57 . 
+drwxr-xr-x 3 root root 4096 Jul 11 04:28 .. 
+-rw-r----- 1 user1 new_group 0 Jul 11 04:54 user1_file.txt 
+-rw-rw-r-- 1 user2 new_group 0 Jul 11 04:56 user2_file.txt
+-rw-rw-r-- 1 user3 new_group    0 Jul 11 04:57 user3_file.txt
+
+user3@eltex-practice2-pg1-v9:/opt/share$ rm user1_file.txt
+rm: remove write-protected regular empty file 'user1_file.txt'? y
+user3@eltex-practice2-pg1-v9:/opt/share$ rm user2_file.txt 
+
+user1@eltex-practice2-pg1-v9:/opt/share$ rm user22_file.txt
+user1@eltex-practice2-pg1-v9:/opt/share$ rm user33_file.txt
+
+$ rm user11_file.txt 
+rm: remove write-protected regular empty file 'user11_file.txt'? y
+$ rm user3_file.txt
+
+root@eltex-practice2-pg1-v9:~# chmod +t /opt/share 
+root@eltex-practice2-pg1-v9:~# ls -ld 
+/opt/share/
+drwxrwsr-t 2 root new_group 4096 Jul 11 05:04 /opt/share/
+
+user1@eltex-practice2-pg1-v9:/opt/share$ rm user2_file.txt 
+rm: cannot remove 'user2_file.txt': 
+Operation not permitted 
+user1@eltex-practice2-pg1-v9:/opt/share$ rm user3_file.txt
+rm: cannot remove 'user3_file.txt': Operation not permitted
+
+$ rm user1_file.txt 
+rm: remove write-protected regular empty file 'user1_file.txt'? y 
+rm: cannot remove 'user1_file.txt': Operation not permitted 
+$ rm user33_file.txt
+rm: cannot remove 'user33_file.txt': Operation not permitted
+
+user3@eltex-practice2-pg1-v9:/opt/share$ rm user1_file.txt 
+rm: remove write-protected regular empty file 'user1_file.txt'? y 
+rm: cannot remove 'user1_file.txt': Operation not permitted 
+user3@eltex-practice2-pg1-v9:/opt/share$ rm user2_file.txt
+rm: cannot remove 'user2_file.txt': Operation not permitted
+
+root@eltex-practice2-pg1-v9:~# type dmesg
+dmesg is hashed (/usr/bin/dmesg)
+root@eltex-practice2-pg1-v9:~# visudo
+user1 ALL=(ALL:ALL) /usr/bin/dmesg
+
+root@eltex-practice2-pg1-v9:/opt/share# nano dmesg_sudo.sh
+#!/bin/bash
+dmesg 
+
+root@eltex-practice2-pg1-v9:/opt/share# chmod u+s dmesg_sudo.sh
+root@eltex-practice2-pg1-v9:/opt/share# su user2 
+$ cd /opt/share $ bash dmesg_sudo.sh 
+dmesg: read kernel buffer failed: Operation not permitted
+
+root@eltex-practice2-pg1-v9:~# chage -l user1 
+Last password change : Jul 11, 2025 
+Password expires : never 
+Password inactive : never 
+Account expires : never 
+Minimum number of days between password change : 0 
+Maximum number of days between password change : 99999
+Number of days of warning before password expires       : 7
+
+root@eltex-practice2-pg1-v9:~# chage -M 10 user1 
+root@eltex-practice2-pg1-v9:~# chage -l user1 
+Last password change : Jul 11, 2025 
+Password expires : Jul 21, 2025 Password inactive : never 
+Account expires : never 
+Minimum number of days between password change : 0 
+Maximum number of days between password change : 10 
+Number of days of warning before password expires : 7 
+root@eltex-practice2-pg1-v9:~# chage -M 10 user2
+root@eltex-practice2-pg1-v9:~# chage -M 10 user3
+
+root@eltex-practice2-pg1-v9:~# nano /etc/motd
+
+root@eltex-practice2-pg1-v9:~# mkdir /root/etc_backup
+root@eltex-practice2-pg1-v9:~# rsync -a /etc/ /root/etc_backup
+
+root@eltex-practice2-pg1-v9:~# tar -czf gzip_backup.tar.gz ./etc_backup/ 
+root@eltex-practice2-pg1-v9:~# apt install bzip2 
+root@eltex-practice2-pg1-v9:~# tar -cjf bzip2_backup.tar.bz2 ./etc_backup/ 
+root@eltex-practice2-pg1-v9:~# apt install p7zip 
+root@eltex-practice2-pg1-v9:~# tar -cf - ./etc_backup/ | 7z a -si 7zip_backup.tar.7z 
+7-Zip 23.01 
+(x64) : Copyright (c) 1999-2023 Igor Pavlov : 2023-06-20
+ 64-bit locale=en_US.UTF-8 Threads:2 OPEN_MAX:1024 Creating archive: 7zip_backup.tar.7z Add new 
+data to archive: 1 file
+    
+Files read from disk: 1 Archive size: 486267 bytes (475 KiB)
+Everything is Ok
+
+root@eltex-practice2-pg1-v9:~# ls -la
+-rw-r--r--   1 root root 486267 Jul 13 10:19 7zip_backup.tar.7z
+-rw-r--r--   1 root root 563843 Jul 13 10:15 bzip2_backup.tar.bz2
+-rw-r--r--   1 root root 596363 Jul 13 10:12 gzip_backup.tar.gz
+
+root@eltex-practice2-pg1-v9:~# nano /etc/motd
+root@eltex-practice2-pg1-v9:~# rsync -a /etc/ /root/etc_backup
+
+root@eltex-practice2-pg1-v9:~# gunzip gzip_backup.tar.gz
+root@eltex-practice2-pg1-v9:~# tar -uf gzip_backup.tar /etc/motd 
+tar: Removing leading `/' from member names
+tar: Removing leading `/' from hard link targets
+root@eltex-practice2-pg1-v9:~# gzip gzip_backup.tar
+
+root@eltex-practice2-pg1-v9:~# ls -la
+-rw-r--r--   1 root root 596433 Jul 13 10:30 gzip_backup.tar.gz
+
+root@eltex-practice2-pg1-v9:~# tar -xvkf bzip2_backup.tar.bz2  -C ./etc_backup_bzip2/
+root@eltex-practice2-pg1-v9:~# diff -qr etc_backup/ etc_backup_bzip2/etc_backup/ 
+Files etc_backup/motd and etc_backup_bzip2/etc_backup/motd differ 
+diff: etc_backup/mtab: No such file or directory 
+diff: etc_backup_bzip2/etc_backup/mtab: No such file or directory 
+diff: etc_backup/os-release: No such file or directory 
+diff: etc_backup_bzip2/etc_backup/os-release: No such file or directory 
+diff: etc_backup/resolv.conf: No such file or directory
+diff: etc_backup_bzip2/etc_backup/resolv.conf: No such file or directory
+
+root@eltex-practice2-pg1-v9:~# mkdir etc_backup_gzip
+root@eltex-practice2-pg1-v9:~# mkdir etc_backup_7zip
+root@eltex-practice2-pg1-v9:~# tar -xkf gzip_backup.tar.gz  -C ./etc_backup_gzip/
+
+root@eltex-practice2-pg1-v9:~/etc_backup_7zip# 7z x ../7zip_backup.tar.7z 
+7-Zip 23.01 (x64) : 
+Copyright (c) 1999-2023 Igor Pavlov : 2023-06-20
+ 64-bit locale=en_US.UTF-8 Threads:2 OPEN_MAX:1024 Scanning the drive for archives: 1 file, 
+486267 bytes (475 KiB) Extracting archive: ../7zip_backup.tar.7z -- Path = ../7zip_backup.tar.7z 
+Type = 7z Physical Size = 486267 Headers Size = 90 Method = LZMA2:24 Solid = - Blocks = 1 
+Everything is Ok Size: 3471360
+Compressed: 486267
+root@eltex-practice2-pg1-v9:~/etc_backup_7zip# tar -xf 7zip_backup.tar
+
+root@eltex-practice2-pg1-v9:~# diff etc_backup_7zip/etc_backup/motd etc_backup_gzip/etc_backup/motd
+There was no output, the files are the same
+
+root@eltex-practice2-pg1-v9:~# cat etc_backup_7zip/etc_backup/motd 
+Filatov Roman 
+root@eltex-practice2-pg1-v9:~# cat etc_backup_gzip/etc_backup/motd
+Filatov Roman
+
+Looks like the modified file was not added to gzip, but actually 
+the file was added to /etc, not /etc_backup
+
+root@eltex-practice2-pg1-v9:~# diff etc_backup_7zip/etc_backup/motd etc_backup_gzip/etc/motd 
+1a2
+> 13.07.2025 17:22

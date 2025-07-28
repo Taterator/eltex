@@ -1,0 +1,23 @@
+CC=gcc
+CFLAGS=-c -Wall -Werror -Wextra -std=c11
+CFLAGS1= -Wall -Werror -Wextra -std=c11
+LDFLAGS=
+SOURCES=book.c user_interface.c
+OBJECTS=$(SOURCES:.c=.o)
+EXECUTABLE=book
+
+all: clean book
+
+book:
+	$(CC) $(CFLAGS1) -g $(SOURCES) -o $(EXECUTABLE)
+	./$(EXECUTABLE)
+
+.c.o:
+	$(CC) $(CFLAGS) $< -o $@ 
+
+clean:
+	rm -rf $(EXECUTABLE) $(OBJECTS)
+
+rebuild:
+	make clean
+	make all

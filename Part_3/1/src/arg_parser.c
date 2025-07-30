@@ -13,7 +13,7 @@ int is_a_number(char *num_str)
   int len = strlen(num_str);
   for (int i = 0; i < len; i++)
   {
-    if (isdigit(num_str[i]) || num_str[i] == '.')
+    if (isdigit(num_str[i]) || num_str[i] == '.' || (num_str[i] == '-' && i == 0))
     {
       if (num_str[i] == '.')
       {

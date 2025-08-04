@@ -71,20 +71,26 @@ int ping()
   while (flag)
   {
     get_msg(buffer);
-    if (strcmp(buffer, "exit") == 0)
-    {
-      flag = 0;
-      break;
-    }
     if (mq_send(ds_1, buffer, strlen(buffer), PRIORITY) == -1)
     {
       perror("Sending message error");
       return -1;
     }
+    if (strcmp(buffer, "exit") == 0)
+    {
+      flag = 0;
+      break;
+    }
+    memset(new_text, 0, SIZE);
     if (mq_receive(ds_2, new_text, SIZE, &prio) == -1)
     {
       perror("cannot receive");
       return -1;
+    }
+    if (strcmp(new_text, "exit") == 0)
+    {
+      flag = 0;
+      break;
     }
     printf("Message: %s\n", new_text);
   }
@@ -128,21 +134,28 @@ int pong()
 
   while (flag)
   {
+    memset(new_text, 0, SIZE);
     if (mq_receive(ds_1, new_text, SIZE, &prio) == -1)
     {
       perror("cannot receive");
       return -1;
     }
-    printf("Message: %s\n", new_text);
-    get_msg(buffer);
-    if (strcmp(buffer, "exit") == 0)
+    if (strcmp(new_text, "exit") == 0)
     {
       flag = 0;
+      break;
     }
+    printf("Message: %s\n", new_text);
+    get_msg(buffer);
     if (mq_send(ds_2, buffer, strlen(buffer), PRIORITY) == -1)
     {
       perror("Sending message error");
       return -1;
+    }
+    if (strcmp(buffer, "exit") == 0)
+    {
+      flag = 0;
+      break;
     }
   }
 

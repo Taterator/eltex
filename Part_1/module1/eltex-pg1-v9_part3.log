@@ -1,0 +1,69 @@
+eltex-pg1-v9@eltex-2025-summer-19:41> mkdir -p D1/D2/D3
+
+eltex-pg1-v9@eltex-2025-summer-19:41> touch D1/D2/file.txt
+
+eltex-pg1-v9@eltex-2025-summer-19:41> echo "sample text" > D1/D2/file.txt
+
+eltex-pg1-v9@eltex-2025-summer-19:41> cd D1/D2/D3/
+eltex-pg1-v9@eltex-2025-summer-19:41> ln -s ../file.txt softlink.txt
+eltex-pg1-v9@eltex-2025-summer-19:41> ln ../file.txt hardlink.txt
+
+eltex-pg1-v9@eltex-2025-summer-19:41> cat softlink.txt
+sample text 
+eltex-pg1-v9@eltex-2025-summer-19:41> cat hardlink.txt
+sample text
+
+eltex-pg1-v9@eltex-2025-summer-19:41> mv file.txt ../file.txt
+
+eltex-pg1-v9@eltex-2025-summer-19:41> cat hardlink.txt
+sample text 
+eltex-pg1-v9@eltex-2025-summer-19:41> cat softlink.txt
+cat: softlink.txt: No such file or directory
+
+Soft link stops working because it contains the path to the file.
+When the file is moved, soft link points to empty directory.
+Hard link points directly to the place where the file is stored in memory (inode).
+
+eltex-pg1-v9@eltex-2025-summer-19:41> ls 
+D2 file.txt 
+eltex-pg1-v9@eltex-2025-summer-19:41> pwd 
+/home/eltex-pg1-v9/D1 
+eltex-pg1-v9@eltex-2025-summer-19:41> rm -r D2/ 
+eltex-pg1-v9@eltex-2025-summer-19:41> ls
+file.txt
+                                                  
+eltex-pg1-v9@eltex-2025-summer-19:41> find / -type f -size +20M 2> /dev/null
+                                                  
+eltex-pg1-v9@eltex-2025-summer-19:41> find / -type f -size +20M -exec du -h {} + 2> /dev/null > "${USER}_par>
+                                                  
+There is a file called /proc/kcore that shows up as 0, but "find" still finds it to be more than 20M.
+This file is a representation of physical RAM. Its size can show up as 0 bytes or 140 Tb. It's weird.
+                                                  
+eltex-pg1-v9@eltex-2025-summer-19:41> find -type f -mtime -1 2> /dev/null
+          
+./.lesshst
+./.log       
+./D1/file.txt                 
+./eltex-pg1-v9_part3_gt50M.log
+./.bash_history
+./.Xauthority  
+./.bashrc               
+./eltex-pg1-v9_part2.log
+./eltex-pg1-v9_part3.log
+                                                
+eltex-pg1-v9@eltex-2025-summer-19:41> which find
+/usr/bin/find
+                                                  
+eltex-pg1-v9@eltex-2025-summer-19:41> file $(which find)
+/usr/bin/find: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked,
+interpreter /lib64/ld-linux-x86-64.so.2, 
+BuildID[sha1]=5545a6c7162d325fbe5ffabcbfe4e5521b66ce70, for GNU/Linux 3.2.0, stripped
+
+"fild" file contains binary data of the executable
+
+eltex-pg1-v9@eltex-2025-summer-19:41> file /boot/initrd.img*
+/boot/initrd.img-6.1.0-27-amd64: ASCII cpio archive (SVR4 with no CRC)
+/boot/initrd.img-6.1.0-31-amd64: ASCII cpio archive (SVR4 with no CRC)
+/boot/initrd.img-6.1.0-32-amd64: ASCII cpio archive (SVR4 with no CRC)
+
+These files are ASCII cpio archives

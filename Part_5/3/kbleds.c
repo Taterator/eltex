@@ -20,8 +20,8 @@
 MODULE_DESCRIPTION("Example module illustrating the use of Keyboard LEDs.");
 MODULE_LICENSE("GPL");
 // LED vars
-struct timer_list my_timer;
-struct tty_driver *my_driver;
+static struct timer_list my_timer;
+static struct tty_driver *my_driver;
 // char kbledstatus = 0;
 static int _kbledstatus = 0;
 #define BLINK_DELAY HZ / 2

@@ -17,7 +17,7 @@ sniffer:
 	$(CC) $(CFLAGS) $< -o $@ 
 
 clean:
-	rm -rf $(EXECUTABLE) $(OBJECTS) $(BIN_PATH)/* dump.bin dump2.bin
+	rm -rf $(EXECUTABLE) $(OBJECTS) $(BIN_PATH)/* dump.bin
 
 rebuild:
 	make clean

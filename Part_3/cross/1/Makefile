@@ -13,31 +13,18 @@ EXECUTABLE2=$(BIN_PATH)/client
 all: clean server client
 
 server:
+	mkdir -p $(BIN_PATH)
 	$(CC) $(CFLAGS1) -g $(COMMON) $(SRC_PATH)/$@.c -o $(BIN_PATH)/$@
 
 client:
+	mkdir -p $(BIN_PATH)
 	$(CC) $(CFLAGS1) -g $(COMMON) $(SRC_PATH)/$@.c -o $(BIN_PATH)/$@
-
-udp_test:
-	$(CC) $(CFLAGS1) -g $(SRC_PATH)/$@.c -o $(BIN_PATH)/$@
-
-tcp_test:
-	$(CC) $(CFLAGS1) -g $(COMMON) $(SRC_PATH)/$@.c -o $(BIN_PATH)/$@
-
-run1:
-	./$(EXECUTABLE1) 127.0.0.23 55555
-
-run2:
-	./$(EXECUTABLE2) 127.0.0.24 44444 127.0.0.23 55555
-
-run3:
-	./bin/udp_test 127.0.0.24 44444 127.0.0.23 55555
 
 .c.o:
 	$(CC) $(CFLAGS) $< -o $@ 
 
 clean:
-	rm -rf $(EXECUTABLE) $(OBJECTS) $(BIN_PATH)/* dump.bin
+	rm -rf $(EXECUTABLE) $(OBJECTS) $(BIN_PATH)/* 
 
 rebuild:
 	make clean
